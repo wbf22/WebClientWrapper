@@ -65,6 +65,7 @@ public class RestClientWrapper {
             .build();
     }
 
+
     public <R> R get(String url, Map<String, String> headers, Class<R> responseType) {
         WebClient.RequestHeadersSpec<?> spec = webClient.get().uri(url);
 
@@ -78,7 +79,6 @@ public class RestClientWrapper {
             .bodyToMono(responseType)
             .block();
     }
-
 
     public <B, R> R post(String url, B body, Map<String, String> headers, Class<R> responseType) {
         WebClient.RequestBodySpec spec = webClient.post().uri(url);
@@ -95,7 +95,6 @@ public class RestClientWrapper {
             .block();
     }
 
-
     public <B, R> R put(String url, B body, Map<String, String> headers, Class<R> responseType) {
         WebClient.RequestBodySpec spec = webClient.put().uri(url);
 
@@ -110,7 +109,6 @@ public class RestClientWrapper {
             .bodyToMono(responseType)
             .block();
     }
-
 
     public <B, R> R patch(String url, B body, Map<String, String> headers, Class<R> responseType) {
         WebClient.RequestBodySpec spec = webClient.patch().uri(url);
@@ -138,10 +136,6 @@ public class RestClientWrapper {
             .bodyToMono(String.class)
             .block();
     }
-
-
-
-
 
 
     /**
